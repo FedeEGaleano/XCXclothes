@@ -1,0 +1,542 @@
+$colorPrincipal: rgb(234, 238, 31);
+$colorSecundario: rgb(149, 48, 180);
+
+*{
+    margin: 0;
+    padding: 0;
+    font-style: italic;
+    font-family: 'Bebas Neue';
+    text-align: justify;
+    text-transform: capitalize;
+}
+body{
+    background-color: black;
+}
+header{
+    width: 100%;
+    background: $colorPrincipal;
+    height: 52px;
+}
+nav{
+    width: 100%;
+    float: left;
+}
+header nav{
+    width: 100%;
+    max-width: 1400px;
+    margin: 0px auto;
+}
+.menu_bar{
+    display: none;
+}
+header nav ul{
+    overflow: hidden;
+    list-style: none;
+}
+header nav ul li a{
+    color: black;
+    padding: 15px;
+    display: block ;
+    text-decoration: none;
+}
+header nav ul li span{
+    margin-right: 10px;
+}
+header nav ul li a:hover{
+    background: $colorSecundario;
+    color: black;
+}
+header nav ul li{
+    float: left;
+    font-size: 20px;  
+}
+footer{
+    height: 350px;
+    color:rgb(255, 255, 255);
+    font-style: italic;
+    font-weight: normal;
+    font-size: 15px;
+    font-family: 'Bebas Neue';
+    text-align: left;
+    text-transform: capitalize;
+    line-height: 15px;
+    text-decoration: none;
+    letter-spacing: 2px;
+    word-spacing: 5px;
+    background-color:$colorSecundario;
+    align-items: center;
+}
+h1{
+    color: $colorPrincipal;
+    font-style: italic;
+    font-weight: bolder;
+    font-size: 50px;
+    font-family: 'Bebas Neue';
+    text-align: justify;
+    text-transform: capitalize;
+    line-height: 2;
+    text-decoration: none;
+    letter-spacing: 2px;
+    word-spacing: 10px;
+}
+h3{
+    font-size: 40px;
+    color: $colorSecundario;
+    line-height: 2;
+    text-decoration: none;
+    letter-spacing: 2px;
+    word-spacing: 10px;
+    background-color:black;
+}
+h4{
+    font-size: 20px;
+}
+.footerFlex{
+    padding: 0;
+    height: 120px;
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+        .footerFlex__redesSocialesYNewsletter{
+            color: black;
+        }
+}
+footer p{
+    letter-spacing: 2px;
+    word-spacing: 1px;
+}
+.escala:hover{
+    transform: scale(1.3,1.3);
+}
+li:hover{
+    color: $colorSecundario;
+}
+div main{
+    display: flex;
+    justify-content: space-evenly; 
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+div p{
+    color: white;
+    font-size: 22px;
+    text-align: center;
+}
+footer div p{
+    letter-spacing: 2px;
+    word-spacing: 1px;
+    font-size: 15px;
+}
+div main a{
+    font-size: 25px;
+}
+div main select{
+    height: 40px;
+    width: 45px;
+}
+/*extra small devices*/
+@media only screen and ( max-width:600px ){
+    #grilla{
+        display:grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 100px 52px 60px 500px 500px 500px 500px 500px 500px;
+        grid-template-areas: "header"
+                             "nav"  
+                             "tituloA"
+                             "remera1"
+                             "remera2"
+                             "remera3"
+                             "remera4"
+                             "remera5"
+                             "remera6";
+    }
+    main{
+        grid-area: header;
+    }
+    main img{
+        width: 600px;
+        height: 100px;
+    }
+    header{
+        grid-area: nav;
+    }
+    .h1{
+        align-self: center;
+            .h1__tituloPrincipal{
+                 grid-area: tituloA;
+            }
+    }
+    .remera1{
+        background-color: black;
+        grid-area: remera1;
+        justify-self: center;
+        align-self: center;
+    }
+    .remera2{
+        @extend .remera1;
+        grid-area: remera2;
+    }
+    .remera3{
+        @extend .remera1;
+        grid-area: remera3;
+    }    
+    .remera4{
+        @extend .remera1;
+        grid-area: remera4;
+    }    
+    .remera5{
+        @extend .remera1;
+        grid-area: remera5;
+    }    
+    .remera6{
+        @extend .remera1;
+        grid-area: remera6;
+    }
+    li{
+        color:rgb(0, 0, 0);
+        font-style: normal;
+        font-weight: unset;
+        font-size: 15px;
+        text-align: right;
+        text-transform: none;
+        line-height: 12px;
+        text-decoration: none;
+        letter-spacing: 1px;
+        list-style-position: inside;
+        background-color: $colorPrincipal;
+        padding: 0;
+    }    
+    footer{
+        color:rgb(255, 255, 255);
+        font-style: italic;
+        font-weight: normal;
+        font-size: 12px;
+        font-family: 'Bebas Neue', cursive;
+        text-align: left;
+        text-transform: capitalize;
+        line-height: 15px;
+        text-decoration: none;
+        letter-spacing: 2px;
+        word-spacing: 10px;
+        background-color:$colorSecundario;
+    }           
+        
+}  
+ /*tablets*/
+ @media only screen and (min-width: 600px){
+    #grilla{
+        display:grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 150px 52px 60px 500px 500px 500px;
+        grid-template-areas: "header header"
+                             "nav nav"  
+                             "tituloA tituloA"
+                             "remera1 remera2"
+                             "remera3 remera4"
+                             "remera5 remera6";
+        }
+    main{
+        grid-area: header;
+    }
+    main img{
+        width: 700px;
+        height: 150px;
+    }
+    header{
+        grid-area: nav;
+    }
+    .h1{
+        align-self: center;
+            .h1__tituloPrincipal{
+                grid-area: tituloA;
+            }
+    }
+    .remeras{
+        background-color: black;
+        justify-self: center;
+        align-self: center;
+    }    
+    .remera1{
+        background-color: black;
+        grid-area: remera1;
+        justify-self: center;
+        align-self: center;
+    }    
+    .remera2{
+        @extend .remeras;
+        grid-area: remera2;
+    }
+    .remera3{
+        @extend .remeras;
+        grid-area: remera3;
+    }
+    .remera4{
+        @extend .remeras;
+        grid-area: remera4;
+    }
+    .remera5{
+        @extend .remeras;
+        grid-area: remera5;
+    }
+    .remera6{
+        @extend .remeras;
+        grid-area: remera6;
+    }
+    li{
+        color:rgb(0, 0, 0);
+        font-style: normal;
+        font-weight: unset;
+        font-size: 20px;
+        text-align: right;
+        text-transform: none;
+        line-height: 12px;
+        text-decoration: none;
+        letter-spacing: 1px;
+        list-style-position: inside;
+        background-color: $colorPrincipal;
+        padding: 0;
+    }
+   footer{
+        color:rgb(255, 255, 255);
+        font-style: italic;
+        font-weight: normal;
+        font-size: 14px;
+        font-family: 'Bebas Neue', cursive;
+        text-align: left;
+        text-transform: capitalize;
+        line-height: 15px;
+        text-decoration: none;
+        letter-spacing: 2px;
+        word-spacing: 10px;
+        background-color:$colorSecundario;
+    }   
+} 
+/*tablets landscape*/
+@media only screen and (min-width: 768px){
+    #grilla{
+        display:grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 200px 52px 70px 500px 500px 500px;
+        grid-template-areas: "header header"
+                             "nav nav"  
+                             "tituloA tituloA"
+                             "remera1 remera2"
+                             "remera3 remera4"
+                             "remera5 remera6";
+    }
+    main{
+        grid-area: header;
+    }
+    main img{
+        width: 800px;
+        height: 200px;
+    }
+    header{
+        grid-area: nav;
+    }
+    .h1{
+        align-self: center;
+            .h1__tituloPrincipal{
+                grid-area: tituloA;
+            }
+    }
+    .remerass{
+        background-color: black;
+        justify-self: center;
+        align-self: center;
+    }
+    .remera1{
+        @extend .remerass;
+        grid-area: remera1;
+    }
+    .remera2{
+        @extend .remerass;
+        grid-area: remera2;
+    }
+    .remera3{
+        @extend .remerass;
+        grid-area: remera3;
+    }
+    .remera4{
+        @extend .remerass;
+        grid-area: remera4;
+    }
+    .remera5{
+        @extend .remerass;
+        grid-area: remera5;
+    }
+    .remera6{
+        @extend .remerass;
+        grid-area: remera6;
+    }
+    li{
+        color:rgb(0, 0, 0);
+        font-style: normal;
+        font-weight: unset;
+        font-size: 25px;
+        text-align: right;
+        text-transform: none;
+        line-height: 15px;
+        text-decoration: none;
+        letter-spacing: 1px;
+        list-style-position: inside;
+        background-color: $colorPrincipal;
+        padding: 0;
+    }  
+}
+/*menuNav*/
+@media screen and (max-width:768px){
+    header nav{
+        width: 70%;
+        height: 100%;
+        left: -100%;
+        margin: 0;
+        position: fixed;
+    }
+    header nav ul li{
+        display: block;
+        float: none;
+        border-bottom:1px solid black;
+    }
+    .menu_bar{
+        display: block;
+        width: 100%;
+        background: $colorPrincipal;
+    }
+    .menu_bar .bt-menu{
+        display: block;
+        padding: 20px;
+        background: $colorPrincipal;
+        color: black;
+        font-weight: bold;
+        font-size: 30px;
+        -webkit-box-sizing:border-box ;
+        -moz-box-sizing: border-box ;
+        box-sizing: border-box ;
+    }
+    .menu_bar span{
+        float: right;
+        font-size: 25px;
+    }
+}
+/*laptops-escritorios*/
+@media only screen and (min-width: 992px){
+    #grilla{
+        display:grid;
+        grid-template-columns: 33% 33% 33%;
+        grid-template-rows: 240px 52px 70px 500px 500px;
+        grid-template-areas: "header header header"
+                             "nav nav nav"  
+                             "tituloA tituloA tituloA "
+                             "remera1 remera2 remera3"
+                             "remera4 remera5 remera6";
+    }
+    main{
+        grid-area: header;
+    }
+    main img{
+        width: 1148px;
+        height: 240px;
+    }
+    header{
+        grid-area: nav;
+    }
+    .h1{
+        align-self: center;
+            .h1__tituloPrincipal{
+                grid-area: tituloA;
+            }
+    }   
+    .remerasss{
+        background-color: black;
+        grid-area: remera2;
+        justify-self: center;
+        align-self: center;
+    }
+    .remera1{
+        @extend .remerasss;
+        grid-area: remera1;
+    }
+    .remera2{
+        @extend .remerasss;
+        grid-area: remera2;
+    }
+    .remera3{
+         @extend .remerasss;
+        grid-area: remera3;
+    }
+    .remera4{
+        @extend .remerasss;
+        grid-area: remera4;
+    }
+    .remera5{
+        @extend .remerasss;
+        grid-area: remera5;
+    }
+    .remera6{
+         @extend .remerasss;
+        grid-area: remera6;
+    }
+}
+/*dispositivos panoramicos/extra grandes*/
+@media only screen and (min-width: 1200px){
+    #grilla{
+        display:grid;
+        grid-template-columns: 33% 33% 33%;
+        grid-template-rows: 288px 52px 70px 500px 500px;
+        grid-template-areas: "header header header"
+                             "nav nav nav"  
+                             "tituloA tituloA tituloA "
+                             "remera1 remera2 remera3"
+                             "remera4 remera5 remera6";
+    }
+    main{
+        grid-area: header;
+    }
+    main img{
+        width: 1348px;
+        height: 288px;
+    }
+    header{
+        grid-area: nav;
+    }
+    .h1{
+        align-self: center;
+            .h1__tituloPrincipal{
+                grid-area: tituloA;
+              }
+    }
+    .remerassss{
+        background-color: black;
+        justify-self: center;
+        align-self: center;
+    }
+    .remera1{
+        @extend .remerassss;
+        grid-area: remera1;
+    }    
+    .remera2{
+        @extend .remerassss;
+        grid-area: remera2;
+    }
+    .remera3{
+        @extend .remerassss;
+        grid-area: remera3;
+    }
+    .remera4{
+        @extend .remerassss;
+        grid-area: remera4;
+    }
+    .remera5{
+        @extend .remerassss;
+        grid-area: remera5;
+    }
+    .remera6{
+        @extend .remerassss;
+        grid-area: remera6;
+    }
+} 
