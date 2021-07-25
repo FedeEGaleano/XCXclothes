@@ -12,46 +12,9 @@ $colorSecundario: rgb(149, 48, 180);
 body{
     background-color: black;
 }
-main div{
-    width: 100%;
-}
-header{
-    width: 100%;
-    background: $colorPrincipal;
-    height: 52px;
-}
-nav{
-    width: 100%;
-    float: left;
-}
-header nav{
-    width: 100%;
-    max-width: 1400px;
-    margin: 0px auto;
-}
-.menu_bar{
-    display: none;
-}
-header nav ul{
-    overflow: hidden;
-    list-style: none;
-}
-header nav ul li a{
-    color: black;
-    padding: 15px;
-    display: block ;
-    text-decoration: none;
-}
-header nav ul li span{
-    margin-right: 10px;
-}
-header nav ul li a:hover{
-    background: $colorSecundario;
-    color: black;
-}
-header nav ul li{
-    float: left;
-    font-size: 20px;
+ul li a{
+    font-size: 25px;
+    margin-right: 20px;
 }
 footer{
     height: 350px;
@@ -146,7 +109,7 @@ div main select{
     #grilla{
         display:grid;
         grid-template-columns: 100%;
-        grid-template-rows: 100px 52px 60px 500px 500px 500px 500px 500px 500px;
+        grid-template-rows: 100px 60px 60px 500px 500px 500px 500px 500px 500px;
         grid-template-areas: "header"
                              "nav"  
                              "tituloA"
@@ -157,6 +120,10 @@ div main select{
                              "buzo5"
                              "buzo6";
     }
+    ul li a{
+        font-size: 15px;
+        margin-right: 20px;
+    }
     main{
         grid-area: header;
     }
@@ -164,7 +131,7 @@ div main select{
         width: 600px;
         height: 100px;
     }
-    header{
+    #menu{
         grid-area: nav;
     }
     .h1{
@@ -199,20 +166,6 @@ div main select{
         @extend .buzo1;
         grid-area: buzo6;
     }
-    li{
-        color:rgb(0, 0, 0);
-        font-style: normal;
-        font-weight: unset;
-        font-size: 15px;
-        text-align: right;
-        text-transform: none;
-        line-height: 12px;
-        text-decoration: none;
-        letter-spacing: 1px;
-        list-style-position: inside;
-        background-color: $colorPrincipal;
-        padding: 0;
-    }    
     footer{
         color:rgb(255, 255, 255);
         font-style: italic;
@@ -233,13 +186,17 @@ div main select{
     #grilla{
         display:grid;
         grid-template-columns: 50% 50%;
-        grid-template-rows: 150px 52px 60px 500px 500px 500px;
+        grid-template-rows: 150px 60px 60px 500px 500px 500px;
         grid-template-areas: "header header"
                              "nav nav"  
                              "tituloA tituloA"
                              "buzo1 buzo2"
                              "buzo3 buzo4"
                              "buzo5 buzo6";
+    }
+    ul li a{
+        font-size: 15px;
+        margin-right: 20px;
     }
     main{
         grid-area: header;
@@ -248,7 +205,7 @@ div main select{
         width: 700px;
         height: 150px;
     }
-    header{
+    #menu{
         grid-area: nav;
     }
     .h1{
@@ -288,20 +245,6 @@ div main select{
         @extend .buzos;
         grid-area: buzo6;
     }
-    li{
-        color:rgb(0, 0, 0);
-        font-style: normal;
-        font-weight: unset;
-        font-size: 20px;
-        text-align: right;
-        text-transform: none;
-        line-height: 12px;
-        text-decoration: none;
-        letter-spacing: 1px;
-        list-style-position: inside;
-        background-color: $colorPrincipal;
-        padding: 0;
-    }
    footer{
         color:rgb(255, 255, 255);
         font-style: italic;
@@ -322,13 +265,17 @@ div main select{
     #grilla{
         display:grid;
         grid-template-columns: 50% 50%;
-        grid-template-rows: 200px 52px 70px 500px 500px 500px;
+        grid-template-rows: 200px 60px 70px 500px 500px 500px;
         grid-template-areas: "header header"
                              "nav nav"  
                              "tituloA tituloA"
                              "buzo1 buzo2"
                              "buzo3 buzo4"
                              "buzo5 buzo6";
+    }
+    ul li a{
+        font-size: 18px;
+        margin-right: 20px;
     }
     main{
         grid-area: header;
@@ -337,7 +284,7 @@ div main select{
         width: 800px;
         height: 200px;
     }
-    header{
+    #menu{
         grid-area: nav;
     }
     .h1{
@@ -375,62 +322,13 @@ div main select{
         @extend .buzoss;
         grid-area: buzo6;
     }
-    li{
-        color:rgb(0, 0, 0);
-        font-style: normal;
-        font-weight: unset;
-        font-size: 25px;
-        text-align: right;
-        text-transform: none;
-        line-height: 15px;
-        text-decoration: none;
-        letter-spacing: 1px;
-        list-style-position: inside;
-        background-color: $colorPrincipal;
-        padding: 0;
-    }  
-}
-/*menuNav*/
-@media screen and (max-width:768px){
-    header nav{
-        width: 70%;
-        height: 100%;
-        left: -100%;
-        margin: 0;
-        position: fixed;
-    }
-    header nav ul li{
-        display: block;
-        float: none;
-        border-bottom:1px solid black;
-    }
-    .menu_bar{
-        display: block;
-        width: 100%;
-        background: $colorPrincipal;
-    }
-    .menu_bar .bt-menu{
-        display: block;
-        padding: 20px;
-        background: $colorPrincipal;
-        color: black;
-        font-weight: bold;
-        font-size: 30px;
-        -webkit-box-sizing:border-box ;
-        -moz-box-sizing: border-box ;
-        box-sizing: border-box ;
-    }
-    .menu_bar span{
-        float: right;
-        font-size: 25px;
-    }
 }
 /*laptops-escritorios*/
 @media only screen and (min-width: 992px){
     #grilla{
         display:grid;
         grid-template-columns: 33% 33% 33%;
-        grid-template-rows: 240px 52px 70px 500px 500px;
+        grid-template-rows: 240px 60px 70px 500px 500px;
         grid-template-areas: "header header header"
                              "nav nav nav"  
                              "tituloA tituloA tituloA "
@@ -444,7 +342,7 @@ div main select{
         width: 1348px;
         height: 240px;
     }
-    header{
+    #menu{
         grid-area: nav;
     }
     .h1{
@@ -489,7 +387,7 @@ div main select{
     #grilla{
         display:grid;
         grid-template-columns: 33% 33% 33%;
-        grid-template-rows: 288px 52px 70px 500px 500px;
+        grid-template-rows: 288px 60px 70px 500px 500px;
         grid-template-areas: "header header header"
                              "nav nav nav"  
                              "tituloA tituloA tituloA "
@@ -503,7 +401,7 @@ div main select{
         width: 1348px;
         height: 288px;
     }
-    header{
+    #menu{
         grid-area: nav;
     }
     .h1{

@@ -12,49 +12,9 @@ $colorSecundario: rgb(149, 48, 180);
 body{
     background-color: black;
 }
-header{
-    width: 100%;
-    background: $colorPrincipal;
-    height: 52px;
-}
-nav{
-    width: 100%;
-    float: left;
-    height: 52px;
-}
-header nav{
-    width: 100%;
-    max-width: 1400px;
-    margin: -10px auto;
-}
-.menu_bar{
-    display: none;
-}
-header nav ul{
-    overflow: hidden;
-    list-style: none;
-    
-    background: $colorPrincipal;
-}
-header nav ul li a{
-    color: black;
-    padding: 15px;
-    display: block ;
-    text-decoration: none;
-}
-header nav ul li span{
-    margin-right: 10px;
-}
-header nav ul li a:hover{
-    background: $colorSecundario;
-    color: black;
-}
-header nav ul li{
-    float: left;
-    font-size: 20px;
-    height: 52px;
-    padding: -5 auto;
-    margin-right: -10px;
+ul li a{
+    font-size: 25px;
+    margin-right: 20px;
 }
 footer{
     height: 350px;
@@ -116,16 +76,9 @@ footer p{
 .escala:hover{
     transform: scale(1.3,1.3);
 }
-li:hover{
-    color: $colorSecundario;
-}
 div main{
     display: flex;
     justify-content: space-evenly;  
-}
-a{
-    text-decoration: none;
-    color: white;
 }
 div p{
     color: white;
@@ -136,7 +89,6 @@ footer div p{
         letter-spacing: 2px;
         word-spacing: 1px;
         font-size: 15px;
-  
 }
 #flex-container{
     display: flex;
@@ -144,23 +96,24 @@ footer div p{
     justify-content: center;
     align-items: center;
 }
-
 .datos__botones{
     text-align: center;
     display: flex;
     justify-content: space-evenly; 
 }
-
 /*extra small devices*/
 @media only screen and ( max-width:600px ){
     #grilla{
         display: grid;
         grid-template-columns: 100%;
-        grid-template-rows: 100px 52px;
+        grid-template-rows: 100px 60px;
         grid-template-areas:"header"
                             "nav";
     }
-
+    ul li a{
+        font-size: 15px;
+        margin-right: 20px;
+    }
     main{
         grid-area: header;
     }
@@ -168,16 +121,14 @@ footer div p{
         width: 600px;
         height: 100px;
     }
-    header{
+    #menu{
         grid-area: nav;
     }
-
     @mixin datoss ($colorLetra , $tamanioLetra) {
         color: $colorLetra;
         font-size: $tamanioLetra;
         
-    }
-    
+    }   
     .h1{
         grid-area: tituloYSubtitulo;
         justify-self: center;
@@ -191,9 +142,7 @@ footer div p{
                 text-decoration: none;
                 letter-spacing: 2px;
                 word-spacing: 5px;
-                
             }
-
             .h1__subtitulo{
                 @include datoss(white , 22px );
                 text-align: center;
@@ -204,7 +153,6 @@ footer div p{
                 word-spacing: 5px;                
             }
     }
-
     .datos{
         grid-area: datos;
         justify-self: center;
@@ -217,9 +165,7 @@ footer div p{
                 @include datoss(white , 15px )
             }
     }
-
-    .ofertas{
-        
+    .ofertas{       
         justify-self: center;
         align-self: center;
             .ofertas__mensaje{
@@ -227,7 +173,6 @@ footer div p{
 
             }
     }
-
     .botones{
         display: flex;
         flex-direction: center;
@@ -235,17 +180,14 @@ footer div p{
         align-self: center;
         font-size: 15px;
     }
-
     div p input{
         height: 25px;
         width: 250px;
     }
-
     div textarea{
         height: 100px;
         width: 250px;
     }    
-
     footer{
         color:rgb(255, 255, 255);
         font-style: italic;
@@ -260,16 +202,19 @@ footer div p{
         word-spacing: 10px;
         background-color:$colorSecundario;
     }
-
 }
 /*tablets*/
 @media only screen and (min-width: 600px){
     #grilla{
         display: grid;   
         grid-template-columns: 100%;
-        grid-template-rows: 150px 52px;
+        grid-template-rows: 150px 60px;
         grid-template-areas:"header"
                             "nav";
+    }
+    ul li a{
+        font-size: 15px;
+        margin-right: 20px;
     }
     main{
         grid-area: header;
@@ -278,15 +223,13 @@ footer div p{
         width: 700px;
         height: 150px;
     }
-    header{
+    #menu{
         grid-area: nav;
     }
     @mixin datoss ($colorLetra , $tamanioLetra) {
         color: $colorLetra;
-        font-size: $tamanioLetra;
-        
-    }
-    
+        font-size: $tamanioLetra;        
+    }   
     .h1{
         grid-area: tituloYSubtitulo;
         justify-self: center;
@@ -299,10 +242,8 @@ footer div p{
                 line-height: 2;
                 text-decoration: none;
                 letter-spacing: 2px;
-                word-spacing: 5px;
-                
+                word-spacing: 5px;                
             }
-
             .h1__subtitulo{
                 @include datoss(white , 22px );
                 text-align: center;
@@ -313,7 +254,6 @@ footer div p{
                 word-spacing: 5px;                
             }
     }
-
     .datos{
         grid-area: datos;
         justify-self: center;
@@ -326,9 +266,7 @@ footer div p{
                 @include datoss(white , 15px )
             }
     }
-
-    .ofertas{
-        
+    .ofertas{       
         justify-self: center;
         align-self: center;
             .ofertas__mensaje{
@@ -336,7 +274,6 @@ footer div p{
 
             }
     }
-
     .botones{
         display: flex;
         flex-direction: center;
@@ -344,17 +281,14 @@ footer div p{
         align-self: center;
         font-size: 15px;
     }
-
     div p input{
         height: 25px;
         width: 250px;
     }
-
     div textarea{
         height: 100px;
         width: 250px;
     }    
-
     footer{
         color:rgb(255, 255, 255);
         font-style: italic;
@@ -370,15 +304,18 @@ footer div p{
         background-color:$colorSecundario;
     }
 }  
-
 /*tablets landscape*/
 @media only screen and (min-width: 768px){
     #grilla{
         display: grid;
         grid-template-columns: 100%;
-        grid-template-rows: 200px 52px;
+        grid-template-rows: 200px 60px;
         grid-template-areas:"header"
                             "nav";
+    }
+    ul li a{
+        font-size: 18px;
+        margin-right: 20px;
     }
     main{
         grid-area: header;
@@ -387,16 +324,14 @@ footer div p{
         width: 800px;
         height: 200px;
     }
-    header{
+    #menu{
         grid-area: nav;
     }
-
     @mixin datoss ($colorLetra , $tamanioLetra) {
         color: $colorLetra;
         font-size: $tamanioLetra;
         
     }
-
     .h1{
         grid-area: tituloYSubtitulo;
         justify-self: center;
@@ -411,7 +346,6 @@ footer div p{
                 word-spacing: 5px;
                 
             }
-
             .h1__subtitulo{
                 @include datoss(white , 25px );
                 text-align: center;
@@ -422,7 +356,6 @@ footer div p{
                 word-spacing: 5px;                
             }
     }
-
     .datos{
         grid-area: datos;
         justify-self: center;
@@ -435,9 +368,7 @@ footer div p{
                 @include datoss(white , 20px )
             }
     }
-
-    .ofertas{
-        
+    .ofertas{       
         justify-self: center;
         align-self: center;
         text-align: center;
@@ -446,7 +377,6 @@ footer div p{
 
             }
     }
-
     .botones{
         display: flex;
         flex-direction: center;
@@ -454,52 +384,13 @@ footer div p{
         align-self: center;
         font-size: 15px;
     }
-
     div p input{
         height: 30px;
         width: 300px;
     }
-
     div textarea{
         height: 100px;
         width: 300px;
-    }
-    
-    
-}
-/*menuNav*/
-@media screen and (max-width:768px){
-    header nav{
-        width: 70%;
-        height: 100%;
-        left: -100%;
-        margin: 0;
-        position: fixed;
-    }
-    header nav ul li{
-        display: block;
-        float: none;
-        border-bottom:1px solid black;
-    }
-    .menu_bar{
-        display: block;
-        width: 100%;
-        background: $colorPrincipal;
-    }
-    .menu_bar .bt-menu{
-        display: block;
-        padding: 20px;
-        background: $colorPrincipal;
-        color: black;
-        font-weight: bold;
-        font-size: 30px;
-        -webkit-box-sizing:border-box ;
-        -moz-box-sizing: border-box ;
-        box-sizing: border-box ;
-    }
-    .menu_bar span{
-        float: right;
-        font-size: 25px;
     }
 }
 /*laptops-escritorios*/
@@ -507,7 +398,7 @@ footer div p{
     #grilla{
         display: grid;
         grid-template-columns: 100%;
-        grid-template-rows: 240px 52px;
+        grid-template-rows: 240px 60px;
         grid-template-areas:"header"
                             "nav";
     }
@@ -518,16 +409,14 @@ footer div p{
         width: 1348px;
         height: 240px;
     }
-    header{
+    #menu{
         grid-area: nav;
     }
-
     @mixin datoss ($colorLetra , $tamanioLetra) {
         color: $colorLetra;
         font-size: $tamanioLetra;
         
-    }
-    
+    }    
     .h1{
         grid-area: tituloYSubtitulo;
         justify-self: center;
@@ -542,7 +431,6 @@ footer div p{
                 word-spacing: 5px;
                 
             }
-
             .h1__subtitulo{
                 @include datoss(white , 25px );
                 text-align: center;
@@ -553,7 +441,6 @@ footer div p{
                 word-spacing: 5px;                
             }
     }
-
     .datos{
         grid-area: datos;
         justify-self: center;
@@ -566,9 +453,7 @@ footer div p{
                 @include datoss(white , 20px )
             }
     }
-
-    .ofertas{
-        
+    .ofertas{       
         justify-self: center;
         align-self: center;
         text-align: center;
@@ -577,7 +462,6 @@ footer div p{
 
             }
     }
-
     .botones{
         display: flex;
         flex-direction: center;
@@ -585,24 +469,21 @@ footer div p{
         align-self: center;
         font-size: 15px;
     }
-
     div p input{
         height: 30px;
         width: 300px;
     }
-
     div textarea{
         height: 100px;
         width: 300px;
     }
 }
-
 /*dispositivos panoramicos/extra grandes*/
 @media only screen and (min-width: 1200px){
     #grilla{
         display: grid;
         grid-template-columns: 100%;
-        grid-template-rows: 288px 52px;
+        grid-template-rows: 288px 60px;
         grid-template-areas:"header"
                             "nav";               
     }
@@ -613,17 +494,14 @@ footer div p{
         width: 1348px;
         height: 288px;
     }
-    header{
+    #menu{
         grid-area: nav;
     }
-
-
     @mixin datoss ($colorLetra , $tamanioLetra) {
         color: $colorLetra;
         font-size: $tamanioLetra;
         
-    }
-    
+    }  
     .h1{
         grid-area: tituloYSubtitulo;
         justify-self: center;
@@ -638,7 +516,6 @@ footer div p{
                 word-spacing: 5px;
                 
             }
-
             .h1__subtitulo{
                 @include datoss(white , 25px );
                 text-align: center;
@@ -649,7 +526,6 @@ footer div p{
                 word-spacing: 5px;                
             }
     }
-
     .datos{
         grid-area: datos;
         justify-self: center;
@@ -662,9 +538,7 @@ footer div p{
                 @include datoss(white , 20px )
             }
     }
-
-    .ofertas{
-        
+    .ofertas{       
         justify-self: center;
         align-self: center;
         text-align: center;
@@ -673,7 +547,6 @@ footer div p{
 
             }
     }
-
     .botones{
         display: flex;
         flex-direction: center;
@@ -681,12 +554,10 @@ footer div p{
         align-self: center;
         font-size: 15px;
     }
-
     div p input{
         height: 30px;
         width: 300px;
     }
-
     div textarea{
         height: 100px;
         width: 300px;
